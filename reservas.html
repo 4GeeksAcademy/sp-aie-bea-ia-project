@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reserva en Brasaland y unete a Brasa Club para acceder a promociones exclusivas en Colombia y USA.">
+  <title>Brasaland | Reservas y Fidelizacion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Cormorant Garamond", "serif"],
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-zinc-950 font-sans text-zinc-100">
+  <header class="border-b border-amber-500/30 bg-zinc-950/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="inline-flex items-center gap-3" aria-label="Volver al inicio de Brasaland">
+        <span class="font-display text-3xl text-amber-300">Brasaland</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <button id="language-toggle" type="button" class="rounded-full border border-amber-400/70 px-4 py-2 text-xs font-semibold tracking-widest text-amber-200 transition hover:bg-amber-400 hover:text-zinc-950" aria-label="Cambiar idioma" data-i18n="languageToggle">
+          EN
+        </button>
+        <a href="index.html" class="rounded-full bg-amber-400 px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-950 transition hover:bg-amber-300" data-i18n="backHome">Inicio</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section class="mb-12 rounded-3xl border border-zinc-800 bg-[linear-gradient(135deg,rgba(24,24,27,.94),rgba(63,63,70,.6))] p-8">
+      <p class="text-xs uppercase tracking-[0.28em] text-amber-300" data-i18n="reserveEyebrow">Reservas Brasaland</p>
+      <h1 class="mt-3 font-display text-5xl text-zinc-100" data-i18n="reserveTitle">Reserva tu mesa en minutos</h1>
+      <p class="mt-4 max-w-2xl text-zinc-300" data-i18n="reserveSubtitle">Selecciona fecha, hora y cantidad de invitados. Si vienes con ninos, activa la opcion de tronas para preparar tu experiencia perfecta.</p>
+    </section>
+
+    <section class="grid gap-8 lg:grid-cols-2">
+      <article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-7">
+        <h2 class="font-display text-3xl text-amber-200" data-i18n="reservationFormTitle">Sistema de reservas</h2>
+        <form id="reservation-form" class="mt-6 space-y-4" novalidate aria-label="Formulario de reservas">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="res-country" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldCountry">Pais del restaurante</label>
+              <select id="res-country" name="res-country" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="res-country-error" required>
+                <option value="" data-i18n="selectCountry">Selecciona un pais</option>
+                <option value="co" data-i18n="countryCO">Colombia</option>
+                <option value="us" data-i18n="countryUS">Estados Unidos</option>
+              </select>
+              <p id="res-country-error" class="mt-1 hidden text-sm text-red-400"></p>
+            </div>
+            <div>
+              <label for="res-restaurant" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldRestaurant">Restaurante</label>
+              <select id="res-restaurant" name="res-restaurant" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="res-restaurant-error" required>
+                <option value="" data-i18n="selectRestaurant">Selecciona un restaurante</option>
+              </select>
+              <p id="res-restaurant-error" class="mt-1 hidden text-sm text-red-400"></p>
+            </div>
+          </div>
+
+          <div>
+            <label for="res-name" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldName">Nombre completo</label>
+            <input id="res-name" name="res-name" type="text" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="res-name-error" required>
+            <p id="res-name-error" class="mt-1 hidden text-sm text-red-400"></p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="res-date" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldDate">Fecha</label>
+              <input id="res-date" name="res-date" type="date" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="res-date-error" required>
+              <p id="res-date-error" class="mt-1 hidden text-sm text-red-400"></p>
+            </div>
+            <div>
+              <label for="res-time" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldTime">Hora</label>
+              <input id="res-time" name="res-time" type="time" list="reservation-time-slots" step="1800" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="res-time-hint res-time-error" required>
+              <datalist id="reservation-time-slots"></datalist>
+              <p id="res-time-hint" class="mt-1 text-xs text-zinc-400" data-i18n="timeHintDefault">Selecciona pais y restaurante para ver horarios disponibles.</p>
+              <p id="res-time-error" class="mt-1 hidden text-sm text-red-400"></p>
+            </div>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="res-adults" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldAdults">N. adultos</label>
+              <input id="res-adults" name="res-adults" type="number" min="1" max="20" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="res-adults-error" required>
+              <p id="res-adults-error" class="mt-1 hidden text-sm text-red-400"></p>
+            </div>
+            <div>
+              <label for="res-children" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldChildren">N. ninos</label>
+              <input id="res-children" name="res-children" type="number" min="0" max="20" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="res-children-error" required>
+              <p id="res-children-error" class="mt-1 hidden text-sm text-red-400"></p>
+            </div>
+          </div>
+
+          <div id="highchair-wrapper" class="hidden rounded-xl border border-amber-500/40 bg-amber-500/10 p-4" aria-live="polite">
+            <label for="res-highchair" class="mb-2 block text-sm text-amber-200" data-i18n="fieldHighchair">Necesitas tronas?</label>
+            <select id="res-highchair" name="res-highchair" class="w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="res-highchair-error">
+              <option value="" data-i18n="selectOption">Selecciona una opcion</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <p id="res-highchair-error" class="mt-1 hidden text-sm text-red-400"></p>
+          </div>
+
+          <button type="submit" class="w-full rounded-xl bg-amber-400 px-5 py-3 text-sm font-bold uppercase tracking-wider text-zinc-950 transition hover:bg-amber-300" data-i18n="reserveButton">Confirmar reserva</button>
+          <p id="reservation-feedback" class="hidden rounded-lg border px-4 py-3 text-sm" aria-live="polite"></p>
+        </form>
+      </article>
+
+      <article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-7">
+        <h2 class="font-display text-3xl text-amber-200" data-i18n="loyaltyTitle">Brasa Club</h2>
+        <p class="mt-2 text-zinc-300" data-i18n="loyaltySubtitle">Crea tu cuenta y accede a promociones exclusivas para clientes registrados.</p>
+
+        <form id="loyalty-form" class="mt-6 space-y-4" novalidate aria-label="Registro de fidelizacion">
+          <div>
+            <label for="loy-name" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldName">Nombre completo</label>
+            <input id="loy-name" name="loy-name" type="text" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="loy-name-error" required>
+            <p id="loy-name-error" class="mt-1 hidden text-sm text-red-400"></p>
+          </div>
+          <div>
+            <label for="loy-email" class="mb-2 block text-sm text-zinc-300">Email</label>
+            <input id="loy-email" name="loy-email" type="email" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="loy-email-error" required>
+            <p id="loy-email-error" class="mt-1 hidden text-sm text-red-400"></p>
+          </div>
+          <div>
+            <label for="loy-password" class="mb-2 block text-sm text-zinc-300" data-i18n="fieldPassword">Contrasena</label>
+            <input id="loy-password" name="loy-password" type="password" minlength="8" class="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-zinc-100 outline-none transition focus:border-amber-400" aria-describedby="loy-password-error" required>
+            <p id="loy-password-error" class="mt-1 hidden text-sm text-red-400"></p>
+          </div>
+
+          <button type="submit" class="w-full rounded-xl border border-amber-400 bg-zinc-950 px-5 py-3 text-sm font-bold uppercase tracking-wider text-amber-300 transition hover:bg-amber-400 hover:text-zinc-950" data-i18n="loyaltyButton">Crear cuenta</button>
+          <p id="loyalty-feedback" class="hidden rounded-lg border px-4 py-3 text-sm" aria-live="polite"></p>
+        </form>
+
+        <div class="mt-8 rounded-2xl border border-dashed border-zinc-700 bg-zinc-950/50 p-5">
+          <h3 class="font-display text-2xl text-zinc-100" data-i18n="offersTitle">Ofertas exclusivas</h3>
+          <p class="mt-2 text-sm text-zinc-400" data-i18n="offersLockedMessage">Solo usuarios registrados pueden acceder a promociones especiales.</p>
+          <ul id="offers-list" class="mt-4 hidden space-y-2 text-sm text-amber-100" aria-live="polite">
+            <li data-i18n="offer1">15% de descuento en Ribeye Signature (lunes a jueves).</li>
+            <li data-i18n="offer2">Postre de la casa sin costo en tu primera reserva online.</li>
+            <li data-i18n="offer3">Upgrade a entrada premium en reservas para 4+ adultos.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="border-t border-zinc-800 bg-zinc-950/80 py-6 text-center text-xs text-zinc-500">
+    &copy; 2026 Brasaland. <span data-i18n="rights">Todos los derechos reservados.</span>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="validation.js" defer></script>
+</body>
+</html>

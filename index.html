@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Brasaland: cadena internacional de cocina a la brasa con 14 restaurantes en Colombia y Florida. Reserva, descubre nuestra carta y vive una experiencia premium.">
+	<meta name="keywords" content="Brasaland, restaurante a la brasa, Medellin, Miami, carnes premium, reservas restaurante">
+	<meta name="author" content="Brasaland">
+	<title>Brasaland | Cocina A La Brasa</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: {
+						display: ["Cormorant Garamond", "serif"],
+						sans: ["Manrope", "sans-serif"]
+					}
+				}
+			}
+		};
+	</script>
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Brasaland",
+			"url": "https://brasaland.com",
+			"logo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5",
+			"foundingDate": "2008",
+			"founder": {
+				"@type": "Person",
+				"name": "Familia Restrepo"
+			},
+			"description": "Cadena internacional de restaurantes de cocina a la brasa con presencia en Colombia y Estados Unidos.",
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+57-604-555-0198",
+				"contactType": "customer service",
+				"availableLanguage": ["Spanish", "English"]
+			},
+			"sameAs": [
+				"https://www.instagram.com/brasaland",
+				"https://www.facebook.com/brasaland"
+			]
+		}
+	</script>
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Restaurant",
+			"name": "Brasaland",
+			"servesCuisine": "Steakhouse",
+			"priceRange": "$$$",
+			"hasMenu": "https://brasaland.com/#menu",
+			"areaServed": ["Colombia", "Florida"],
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Medellin",
+				"addressCountry": "CO"
+			}
+		}
+	</script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans selection:bg-amber-500 selection:text-zinc-950">
+	<header class="relative overflow-hidden border-b border-amber-500/30">
+		<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(245,158,11,0.18),_transparent_45%),radial-gradient(circle_at_bottom_left,_rgba(120,53,15,0.35),_transparent_40%)]"></div>
+		<div class="relative mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+			<nav class="flex items-center justify-between" aria-label="Navegacion principal">
+				<a href="#inicio" class="group inline-flex items-center gap-3" aria-label="Ir al inicio de Brasaland">
+					<div class="h-10 w-10 rounded-full border border-amber-500/60 bg-zinc-900/80 p-2 transition-transform duration-300 group-hover:rotate-12">
+						<svg viewBox="0 0 24 24" fill="none" class="h-full w-full text-amber-400" aria-hidden="true">
+							<path d="M12 3C8 7 7 10 7 13a5 5 0 0 0 10 0c0-3-1-6-5-10Z" stroke="currentColor" stroke-width="1.5"/>
+							<path d="M9.5 14.5c.8.6 1.6.9 2.5.9s1.7-.3 2.5-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+						</svg>
+					</div>
+					<div>
+						<p class="font-display text-2xl tracking-wide text-amber-300">Brasaland</p>
+						<p class="text-xs uppercase tracking-[0.28em] text-zinc-400" data-i18n="brandTagline">Grill House</p>
+					</div>
+				</a>
+
+				<ul class="hidden items-center gap-8 text-sm font-medium lg:flex">
+					<li><a href="#valor" class="text-zinc-200 transition hover:text-amber-300" data-i18n="navValue">Valor</a></li>
+					<li><a href="#como-funciona" class="text-zinc-200 transition hover:text-amber-300" data-i18n="navHow">Como Funciona</a></li>
+					<li><a href="#expansion" class="text-zinc-200 transition hover:text-amber-300" data-i18n="navExpansion">Expansion</a></li>
+					<li><a href="#menu" class="text-zinc-200 transition hover:text-amber-300" data-i18n="navMenu">Carta</a></li>
+					<li><a href="#horarios" class="text-zinc-200 transition hover:text-amber-300" data-i18n="navHours">Horarios</a></li>
+				</ul>
+
+				<div class="flex items-center gap-3">
+					<button id="language-toggle" type="button" class="rounded-full border border-amber-400/70 px-4 py-2 text-xs font-semibold tracking-widest text-amber-200 transition hover:bg-amber-400 hover:text-zinc-950" aria-label="Cambiar idioma" data-i18n="languageToggle">
+						EN
+					</button>
+					<a href="reservas.html" class="rounded-full bg-amber-400 px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-950 transition hover:bg-amber-300" data-i18n="bookNow">Reservar</a>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main id="inicio">
+		<section class="relative isolate overflow-hidden">
+			<img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80" alt="Chef preparando cortes de carne en una parrilla" class="h-[70vh] w-full object-cover object-center brightness-50" loading="eager">
+			<div class="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-900/40 to-transparent"></div>
+			<article class="absolute inset-0 mx-auto flex max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+				<div class="max-w-2xl space-y-6">
+					<p class="inline-block rounded-full border border-amber-300/70 px-4 py-1 text-xs uppercase tracking-[0.25em] text-amber-200" data-i18n="heroBadge">Desde 2008</p>
+					<h1 class="font-display text-5xl leading-tight text-white sm:text-6xl" data-i18n="heroTitle">La Brasa Que Une Medellin Y Miami</h1>
+					<p class="max-w-xl text-base text-zinc-100/90 sm:text-lg" data-i18n="heroSubtitle">14 restaurantes, una misma firma de sabor. Brasaland combina cocina premium a la brasa, hospitalidad cercana y ejecucion impecable.</p>
+					<div class="flex flex-wrap gap-3">
+						<a href="#menu" class="rounded-full bg-amber-400 px-6 py-3 text-sm font-bold uppercase tracking-wide text-zinc-950 transition hover:bg-amber-300" data-i18n="heroPrimary">Explorar Carta</a>
+						<a href="reservas.html" class="rounded-full border border-zinc-200/70 px-6 py-3 text-sm font-bold uppercase tracking-wide text-zinc-100 transition hover:border-amber-300 hover:text-amber-300" data-i18n="heroSecondary">Reservar Mesa</a>
+					</div>
+				</div>
+			</article>
+		</section>
+
+		<section id="valor" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+			<div class="mb-10 flex items-end justify-between gap-6">
+				<div>
+					<p class="text-xs uppercase tracking-[0.3em] text-amber-300" data-i18n="valueEyebrow">Nuestra propuesta</p>
+					<h2 class="font-display text-4xl text-zinc-50" data-i18n="valueTitle">Tres pilares de una marca internacional</h2>
+				</div>
+			</div>
+			<div class="grid gap-6 md:grid-cols-3">
+				<article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-amber-400/70">
+					<h3 class="mb-3 font-display text-2xl text-amber-200" data-i18n="pillar1Title">Consistencia total</h3>
+					<p class="text-zinc-300" data-i18n="pillar1Text">Misma receta, misma tecnica, mismo sabor en cada local de Medellin y Florida.</p>
+				</article>
+				<article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-amber-400/70">
+					<h3 class="mb-3 font-display text-2xl text-amber-200" data-i18n="pillar2Title">Servicio calido</h3>
+					<p class="text-zinc-300" data-i18n="pillar2Text">Una experiencia confiable donde cada equipo cuida al cliente como en casa.</p>
+				</article>
+				<article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-amber-400/70">
+					<h3 class="mb-3 font-display text-2xl text-amber-200" data-i18n="pillar3Title">Rapidez operativa</h3>
+					<p class="text-zinc-300" data-i18n="pillar3Text">Procesos de cocina optimizados para servir platos premium con agilidad.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="como-funciona" class="border-y border-zinc-800 bg-zinc-900/60">
+			<div class="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 md:grid-cols-3 lg:px-8">
+				<article class="rounded-xl border border-amber-500/30 bg-zinc-950/60 p-6">
+					<p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-amber-300">01</p>
+					<h3 class="font-display text-2xl text-zinc-100" data-i18n="step1Title">Seleccion premium</h3>
+					<p class="mt-2 text-zinc-300" data-i18n="step1Text">Cortes certificados y abastecimiento controlado en ambos paises.</p>
+				</article>
+				<article class="rounded-xl border border-amber-500/30 bg-zinc-950/60 p-6">
+					<p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-amber-300">02</p>
+					<h3 class="font-display text-2xl text-zinc-100" data-i18n="step2Title">Maestria a la brasa</h3>
+					<p class="mt-2 text-zinc-300" data-i18n="step2Text">Tecnica estandarizada y entrenamiento continuo para una coccion perfecta.</p>
+				</article>
+				<article class="rounded-xl border border-amber-500/30 bg-zinc-950/60 p-6">
+					<p class="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-amber-300">03</p>
+					<h3 class="font-display text-2xl text-zinc-100" data-i18n="step3Title">Entrega impecable</h3>
+					<p class="mt-2 text-zinc-300" data-i18n="step3Text">Servicio cercano, tiempos agiles y consistencia en cada visita.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="expansion" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+			<div class="grid gap-8 lg:grid-cols-2">
+				<article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-8">
+					<p class="text-xs uppercase tracking-[0.25em] text-amber-300" data-i18n="expansionEyebrow">Expansion internacional</p>
+					<h2 class="mt-3 font-display text-4xl text-zinc-50" data-i18n="expansionTitle">De Medellin al sur de Florida</h2>
+					<p class="mt-4 text-zinc-300" data-i18n="expansionText">Con liderazgo de Mariana Restrepo desde 2019, Brasaland consolidó 14 restaurantes en dos mercados, manteniendo una operacion coordinada y una identidad culinaria unica.</p>
+					<div class="mt-6 grid grid-cols-2 gap-4">
+						<div class="rounded-lg bg-zinc-800/80 p-4">
+							<p class="text-xs uppercase tracking-widest text-zinc-400" data-i18n="colombiaLabel">Colombia</p>
+							<p class="mt-1 text-2xl font-bold text-amber-200">9</p>
+							<p class="text-zinc-300" data-i18n="locations">restaurantes</p>
+						</div>
+						<div class="rounded-lg bg-zinc-800/80 p-4">
+							<p class="text-xs uppercase tracking-widest text-zinc-400">USA</p>
+							<p class="mt-1 text-2xl font-bold text-amber-200">5</p>
+							<p class="text-zinc-300" data-i18n="locations">restaurants</p>
+						</div>
+					</div>
+				</article>
+				<article class="overflow-hidden rounded-2xl border border-zinc-800">
+					<img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" alt="Interior elegante de restaurante con parrilla abierta" class="h-full w-full object-cover transition duration-700 hover:scale-105">
+				</article>
+			</div>
+		</section>
+
+		<section id="menu" class="bg-zinc-900/60 py-16">
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div class="mb-10">
+					<p class="text-xs uppercase tracking-[0.28em] text-amber-300" data-i18n="menuEyebrow">Carta Brasaland</p>
+					<h2 class="font-display text-4xl text-zinc-50" data-i18n="menuTitle">Carnes a la brasa y menu infantil</h2>
+				</div>
+				<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+					<article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80">
+						<img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" alt="Ribeye a la brasa servido con vegetales" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105">
+						<div class="p-5">
+							<h3 class="font-display text-2xl text-amber-200" data-i18n="item1Name">Ribeye Signature</h3>
+							<p class="mt-2 text-sm text-zinc-300" data-i18n="item1Desc">Corte premium de 350g, mantequilla de ajo ahumado y papas rusticas.</p>
+							<p class="mt-4 text-lg font-semibold text-zinc-100" data-price data-price-cop="98000" data-price-usd="27"></p>
+						</div>
+					</article>
+
+					<article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80">
+						<img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80" alt="Punta de anca a la brasa con salsa chimichurri" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105">
+						<div class="p-5">
+							<h3 class="font-display text-2xl text-amber-200" data-i18n="item2Name">Punta de Anca</h3>
+							<p class="mt-2 text-sm text-zinc-300" data-i18n="item2Desc">280g de res seleccionada, chimichurri de la casa y vegetales salteados.</p>
+							<p class="mt-4 text-lg font-semibold text-zinc-100" data-price data-price-cop="82000" data-price-usd="22"></p>
+						</div>
+					</article>
+
+					<article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80">
+						<img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80" alt="Costillas de cerdo glaseadas en parrilla" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105">
+						<div class="p-5">
+							<h3 class="font-display text-2xl text-amber-200" data-i18n="item3Name">Costillas BBQ Brasa</h3>
+							<p class="mt-2 text-sm text-zinc-300" data-i18n="item3Desc">Costillas de cerdo de coccion lenta, glaseado artesanal y mazorca grillada.</p>
+							<p class="mt-4 text-lg font-semibold text-zinc-100" data-price data-price-cop="76000" data-price-usd="20"></p>
+						</div>
+					</article>
+
+					<article class="group overflow-hidden rounded-2xl border border-amber-500/40 bg-zinc-950/90">
+						<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Menu infantil con mini hamburguesa y papas" class="h-52 w-full object-cover transition duration-500 group-hover:scale-105">
+						<div class="p-5">
+							<span class="rounded-full bg-amber-400/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-200" data-i18n="kidsBadge">Menu Infantil</span>
+							<h3 class="mt-3 font-display text-2xl text-amber-100" data-i18n="item4Name">Mini Brasa Combo</h3>
+							<p class="mt-2 text-sm text-zinc-300" data-i18n="item4Desc">Mini burger de res, papas crocantes y jugo natural.</p>
+							<p class="mt-4 text-lg font-semibold text-zinc-100" data-price data-price-cop="39000" data-price-usd="11"></p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="horarios" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+			<div class="mb-8">
+				<p class="text-xs uppercase tracking-[0.28em] text-amber-300" data-i18n="hoursEyebrow">Horarios</p>
+				<h2 class="font-display text-4xl text-zinc-50" data-i18n="hoursTitle">Atendemos en dos paises, con la misma excelencia</h2>
+			</div>
+			<div class="grid gap-6 md:grid-cols-2">
+				<article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-8">
+					<h3 class="font-display text-3xl text-amber-200">USA</h3>
+					<dl class="mt-6 space-y-4 text-zinc-200">
+						<div class="flex items-center justify-between">
+							<dt data-i18n="lunch">Almuerzo</dt>
+							<dd>11:00 - 13:30</dd>
+						</div>
+						<div class="flex items-center justify-between">
+							<dt data-i18n="dinner">Cena</dt>
+							<dd>16:30 - 20:00</dd>
+						</div>
+					</dl>
+				</article>
+				<article class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-8">
+					<h3 class="font-display text-3xl text-amber-200" data-i18n="colombiaLabel">Colombia</h3>
+					<dl class="mt-6 space-y-4 text-zinc-200">
+						<div class="flex items-center justify-between">
+							<dt data-i18n="lunch">Almuerzo</dt>
+							<dd>12:00 - 15:00</dd>
+						</div>
+						<div class="flex items-center justify-between">
+							<dt data-i18n="dinner">Cena</dt>
+							<dd>19:00 - 22:00</dd>
+						</div>
+					</dl>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<footer class="border-t border-zinc-800 bg-zinc-950/80">
+		<div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
+			<article>
+				<h3 class="font-display text-2xl text-amber-300">Brasaland</h3>
+				<p class="mt-3 text-sm text-zinc-300" data-i18n="footerClaim">Cocina a la brasa con consistencia internacional.</p>
+			</article>
+			<article>
+				<h4 class="text-sm font-semibold uppercase tracking-widest text-zinc-300" data-i18n="footerContact">Contacto</h4>
+				<p class="mt-3 text-sm text-zinc-400">+57 604 555 0198</p>
+				<p class="text-sm text-zinc-400">+1 305 555 0121</p>
+				<p class="text-sm text-zinc-400">info@brasaland.com</p>
+			</article>
+			<article>
+				<h4 class="text-sm font-semibold uppercase tracking-widest text-zinc-300" data-i18n="footerLinks">Accesos</h4>
+				<div class="mt-3 space-y-2 text-sm">
+					<a href="reservas.html" class="block text-zinc-400 transition hover:text-amber-300" data-i18n="bookNow">Reservar</a>
+					<a href="#menu" class="block text-zinc-400 transition hover:text-amber-300" data-i18n="navMenu">Carta</a>
+				</div>
+			</article>
+		</div>
+		<p class="border-t border-zinc-800 py-4 text-center text-xs text-zinc-500">&copy; 2026 Brasaland. <span data-i18n="rights">Todos los derechos reservados.</span></p>
+	</footer>
+
+	<script src="script.js" defer></script>
+	<script src="validation.js" defer></script>
+</body>
+</html>
