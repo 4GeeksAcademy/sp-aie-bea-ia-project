@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 const CandidateControls = dynamic(() => import("./CandidateControls"), { ssr: false });
+const NotesClient = dynamic(() => import("./NotesClient"), { ssr: false });
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "https://playground.4geeks.com/tracker/api/v1";
 
@@ -60,15 +61,7 @@ export default async function CandidateDetail({ params }: { params: { id: string
         <CandidateControls id={candidate.id} status={candidate.status} stage={candidate.stage} onChange={async () => {}} />
       </div>
       <h2 className="text-lg font-semibold mt-6 mb-2">Notas internas</h2>
-      <ul className="space-y-2">
-        {notes.length === 0 ? <li className="text-slate-500">No hay notas para este candidato.</li> :
-          notes.map((note: any) => (
-            <li key={note.id} className="border rounded-xl px-3 py-2 bg-slate-50">
-              <div className="text-sm">{note.content}</div>
-              <div className="text-xs text-slate-500 mt-1">{toLocalDate(note.created_at)}</div>
-            </li>
-          ))}
-      </ul>
+      <NotesClient id={candidate.id} initialNotes={notes} />
     </div>
   );
 }
