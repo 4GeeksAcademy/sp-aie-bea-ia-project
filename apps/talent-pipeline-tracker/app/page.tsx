@@ -10,7 +10,7 @@ type CandidateListResponse = {
 
 async function getInitialRecords(): Promise<CandidateRecord[]> {
   try {
-    const response = await fetch(`${API_BASE}/records?limit=200`, {
+    const response = await fetch(`${API_BASE}/records?limit=100`, {
       cache: "no-store",
     });
 

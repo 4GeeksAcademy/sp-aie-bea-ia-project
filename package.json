@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "description": "Utilities and shared business logic for Brasaland Digital",
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "start": "npx http-server ."
   },
   "devDependencies": {
     "typescript": "^5.6.3"
